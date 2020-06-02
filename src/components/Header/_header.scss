@@ -1,0 +1,155 @@
+$primary-color: #2c4155;
+.main-header {
+  box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.07);
+
+  // .dropdown:hover > .dropdown-menu {
+  //   display: block;
+  // }
+
+  #login-btn {
+    color: $secondary;
+    border-color: $primary-color !important;
+    background-color: $primary-color;
+  }
+
+  .chevron {
+    height: 0.7em;
+    width: 0.7em;
+    display: inline-block;
+    transition: all 1s;
+    color: grey;
+    &.open {
+      transform: rotate(-180deg);
+    }
+  }
+  .mobile {
+    display: none;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  @media (max-width: 993px) {
+    .mobile {
+      display: contents;
+    }
+  }
+
+  .new-flyout-menu {
+    .full {
+      display: contents;
+    }
+
+    .contents {
+      padding: 5em;
+      color: grey;
+    }
+
+    @media (max-width: 993px) {
+      .full {
+        display: none;
+      }
+    }
+  }
+
+  .modal-background {
+    z-index: -100;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba($flyout-color, 1);
+    overflow: hidden;
+    opacity: 0;
+    height: 0vh;
+    transition: all 1s ease-in-out;
+    text-align: left;
+
+    &.open {
+      opacity: 1;
+      height: 100vh;
+    }
+
+    .close-menu-btn {
+      margin-top: 0.85em;
+      margin-left: 1em;
+      border: none;
+      background-color: $flyout-color;
+      color: $app-primary;
+      outline: none;
+    }
+  }
+
+  .search-modal-background {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba($secondary, 1);
+    color: $primary-color;
+    overflow: hidden;
+    opacity: 0;
+    height: 0vh;
+    transition: all 0s ease-in-out;
+    text-align: left;
+
+    &.open {
+      opacity: 1;
+      height: 100vh;
+    }
+
+    .close-menu-btn {
+      margin-top: 0.85em;
+      margin-left: 1em;
+      border: none;
+      background-color: $secondary;
+      color: $primary-color;
+      outline: none;
+    }
+    .contents {
+      margin-top: 5em;
+    }
+
+    form {
+      input {
+        font-size: 3rem;
+        color: $primary-color;
+        border-bottom: solid 2px $primary-color;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background-color: $secondary;
+      }
+
+      button {
+        margin-top: 1em;
+        color: $primary-color;
+      }
+    }
+
+    .search-results {
+      margin-top: 2em;
+    }
+  }
+
+  .dropdown-menu {
+    &.show {
+      position: absolute;
+      right: 0;
+      left: auto;
+    }
+  }
+
+  .menu-toggle {
+    color: rgba(0, 0, 0, 0.5);
+    background-color: $secondary;
+    outline: none;
+    border: none;
+  }
+}
